@@ -1780,6 +1780,8 @@ class TrueBuyInterface:
             dados = {'entrada_dinheiro': self.entrada_dinheiro, 'entrada_cartao': self.entrada_cartao, 'sangria':sangria, 'caixa_restante': valor_inserido}
             with open('txts/historic_fechamentos_de_caixa.txt', 'a') as a:
                 a.write(f'{date} - {dados}\n')
+            with open('txts/troco.txt', 'w') as a:
+                a.write(f'{valor_inserido}'
             self.fechar_tp_8()
             yon_1 = self.get_yes_or_not(self.root, 'Imprimir o resumo do fechamento de caixa?')
             if yon_1:        
